@@ -15,9 +15,22 @@ public class App {
     }
 
     //Lógica:
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
-        double PesoBase = 72;
-        double PcGordura = 20;
+        
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.println("Quanto você pesa atualmente?");
+        Double PesoBase = scanner.nextDouble();
+
+        System.out.println("Qual sua porcentagem de gordura corporal?");
+        Double PcGordura = scanner.nextDouble();
+
+        
         double Rmv = 100;
         double PesoSemGordura = Rmv - PcGordura;
         double KcalBase = PesoSemGordura * PesoBase;
@@ -27,12 +40,14 @@ public class App {
         // Atividade Fisica
 
         // Abaixo, deve variar entre treina 1 vez por semana, treina 2, ou não treina.
-
-        int AtividadeFisica = 1;     
-        String VezesQueTreino = (AtividadeFisica == 1) ? "Treino uma vez por dia" : "Não treino";
-        System.out.println(VezesQueTreino);
-
+        System.out.println
+        ("Quantas vezes você treina por dia?\nUma vez (Digite 1),\nDuas vezes (Digite 2),\nOu não treina? (Digite 0).");
+        int AtividadeFisica = scanner.nextInt();
+        
         double KcalGastaPaciva;
+
+        System.out.println("Digite seu OBJETIVO:\nGANHAR PESO (1)\nPERDER PESO (2)");
+        double Objetivo = scanner.nextDouble();
         
         if (AtividadeFisica == 1) {
             KcalGastaPaciva = Basal * 1.2;
@@ -43,19 +58,15 @@ public class App {
             KcalGastaPaciva = Basal * 1;
         }
 
-        Scanner scanner = new Scanner(System.in);
+        if (Objetivo == 2) {
+            double ConsDiarioPerder = KcalGastaPaciva * 0.75;
+            System.out.printf("Você deve consumir: %.2f ", ConsDiarioPerder , "Kcal");
 
-        System.out.println("Digite seu OBJETIVO: (ganhar/perder)");
-        String Objetivo = scanner.nextLine(); //salva o que o usuario digitou
+        } else if (Objetivo == 1) {
+            double ConsDiarioGanhar = KcalGastaPaciva * 1.25;
+            System.out.printf("Você deve consumir: %.2f ", ConsDiarioGanhar , "Kcal");
+        }
 
-        double ConsDiario = 0;
-
-        if (Objetivo.equalsIgnoreCase("perder")) {
-            ConsDiario = KcalGastaPaciva * 0.75;
-        } else if (Objetivo.equalsIgnoreCase("ganhar"))
-            ConsDiario = KcalGastaPaciva * 1.25;
-
-        System.out.println("Você deve consumir " + ConsDiario + "Kcal");
     }
 }
 
