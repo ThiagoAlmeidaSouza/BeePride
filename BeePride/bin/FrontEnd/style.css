@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- Lado Esquerdo --- */
+.brand-side {
+    flex: 1.2; /* Um pouco mais largo que o lado do form */
+    background-color: #ffcc5c; /* Tom de amarelo aproximado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-wrapper {
+    text-align: center;
+    color: white;
+}
+
+.bee-icon {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.brand-side h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+/* --- Lado Direito --- */
+.form-side {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-wrapper h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* --- Inputs e Botão --- */
+.input-field {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.password-container {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.forgot-password {
+    color: #ffcc5c;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.btn-entrar {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffcc5c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-entrar:hover {
+    background-color: #f7bc3d;
+}
+
+/* --- Divisor --- */
+.divider {
+    text-align: center;
+    margin: 25px 0;
+    position: relative;
+    color: #ccc;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 45%;
+    height: 1px;
+    background-color: #eee;
+}
+
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 45%;
+    height: 1px;
+    background-color: #eee;
+}
+
+/* --- Redes Sociais --- */
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-social img {
+    width: 20px;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+    .brand-side {
+        padding: 40px 0;
+    }
+}
